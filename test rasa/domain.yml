@@ -1,0 +1,100 @@
+version: "3.0"
+
+intents:
+  - greet : {trigger: action_greet}
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - ask_for_help
+  - faq
+  - ask_death
+  - ask_confirm
+  - ask_resolve
+  - ask_all
+  - inform
+  - out_of_scope
+  - other_question
+
+actions:
+  - respond_faq
+  - action_default_ask_affirmation
+  - action_ask_greet
+
+entities:
+  - name
+  - country
+  - city
+
+forms:
+  - form_ask_covid
+
+slots:
+  country:
+    type: unfeaturized
+  city:
+    type: unfeaturized
+
+
+responses:
+  utter_greet:
+  - text: "Xin chào =)"
+  - text: "Chào đằng ấy nha =)"
+  - text: "Hi, Corasa rất hân hạnh được tiếp chuyện với bạn =)"
+
+  utter_goodbye:
+  - text: "Bye bye bạn tôi nhé!"
+    image: "https://image.freepik.com/free-vector/flat-cartoon-illustration-earth-corona-covid-19-virus_69135-695.jpg"
+  - text: "Bái bai ..."
+    image: "https://image.freepik.com/free-vector/flat-cartoon-illustration-earth-corona-covid-19-virus_69135-695.jpg"
+
+  utter_affirm:
+  - text: "Ha..ha.."
+  - text: "hehe"
+
+  utter_deny:
+  - text: "hmmm... Tiếp tục nào"
+
+  utter_mood_great:
+  - text: "Quá tuyệt, tiếp tục thế nhé! :D"
+
+  utter_mood_unhappy:
+  - text: "I'm so sorry :("
+
+  utter_bot_challenge:
+  - text: "Xin chào bạn, mình là Corasa. Nếu có bất cứ thắc mắc gì liên quan đến dịch COVID-19 hãy đặt câu hỏi cho mình, mình sẽ trả lời trong tầm hiểu biết của mình :D. Have a good talking!."
+  - text: "Xin chào, mình là Corasa nhé. Là Bot được tạo ra với mục đích giải đáp các vấn đề về dịch COVID-19, mình có trách nhiệm giúp đỡ tất cả anh em :D. Have a good talking!."
+  
+  utter_ask_for_help:
+  - text: "Mình có thể giúp gì được bạn? =)"
+  - text: "Được giúp đỡ bạn là niềm vinh hạnh cho Corasa :D"
+
+  utter_ask_country:
+  - text: "Bạn muốn biết thêm thông tin về Việt Nam hay quốc gia nào?"
+
+  utter_ask_city:
+  - text: "Thành phố nào mà bạn quan tâm đến vậy?"
+
+  utter_ask_resolve:
+  - text: "Sau đây là 1 vài thống kê bao gồm số người đã được chữa khỏi tính đến thời điểm hiện tại có thể bạn chưa biết."
+
+  utter_ask_confirm:
+  - text: "Sau đây là 1 vài thống kê bao gồm số ca được xác nhận mắc COVID-19 tính đến thời điểm hiện tại có thể bạn chưa biết."
+
+  utter_ask_death:
+  - text: "Sau đây là 1 vài thống kê bao gồm số ca tử vong tính đến thời điểm hiện tại có thể bạn chưa biết."
+
+  utter_ask_all:
+  - text: "Sau đây là 1 vài thống kê tình hình chung trên toàn thế giới tính đến thời điểm hiện tại."
+
+  utter_out_of_scope:
+  - text: "Xin lỗi, tôi không thể xử lý vấn đề này."
+
+  utter_other_question:
+  - text: "Tiếp tục nào =)"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
